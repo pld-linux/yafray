@@ -1,5 +1,5 @@
 # TODO:
-# - make use of macros in %%build section
+# - use %{__cc}, %{__cxx}, %{rpmcflags} to build (need SConscript hacking)
 #
 Summary:	High quality photorealistic render system
 Summary(pl):	Wysokiej jako¶ci fotorealistyczny system renderuj±cy
