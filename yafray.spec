@@ -14,6 +14,7 @@ Patch0:		%{name}-conf_path.patch
 URL:		http://www.yafray.org/
 BuildRequires:	libjpeg-devel
 BuildRequires:	libstdc++-devel >= 5:3.3.2
+BuildRequires:	scons
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,7 +26,7 @@ YAFRAY jest wolnodostêpnym silnikiem renderuj±cym 3d opartym o XML.
 
 %prep
 %setup -q
-patch0 -p1 -b .wiget
+%patch0 -p1 -b .wiget
 
 %build
 scons prefix=%{_prefix} conf_path=%{_sysconfdir}
