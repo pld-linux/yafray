@@ -1,0 +1,11 @@
+--- yafray-0.0.7/SConstruct.wiget	2004-09-23 10:08:45.000000000 +0200
++++ yafray-0.0.7/SConstruct	2004-09-23 10:10:23.000000000 +0200
+@@ -168,7 +168,7 @@
+ 	lib_path=prefix+"/lib"
+ 	plugin_path=prefix+"/lib/yafray"
+ 	bin_path=prefix+"/bin"
+-	conf_path=prefix+"/etc"
++	conf_path=ARGUMENTS.get('conf_path',prefix+'/etc')
+ else:
+ 	cwd = os.getcwd()
+ 	prefix=ARGUMENTS.get('prefix',cwd + os.sep + 'win32pak' )
