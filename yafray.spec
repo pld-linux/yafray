@@ -18,10 +18,10 @@ BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-YAFRAY is a free xml based 3d rendering engine.
+YAFRAY is a free XML based 3d rendering engine.
 
 %description -l pl
-YAFRAY jest wolnodostêpnym silnikiem renderuj±cym 3d bazuj±cym na xml.
+YAFRAY jest wolnodostêpnym silnikiem renderuj±cym 3d opartym o XML.
 
 %prep
 %setup -qn %{name}-%{version}-%{subver}
