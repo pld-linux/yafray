@@ -4,13 +4,13 @@
 Summary:	High quality photorealistic render system
 Summary(pl):	Wysokiej jako¶ci fotorealistyczny system renderuj±cy
 Name:		yafray
-Version:	0.0.6
-%define		subver 2
-Release:	%{subver}.0.1
+Version:	0.0.7
+Release:	0.1
 License:	GPL v2.1
 Group:		Applications/Graphics
-Source0:	http://www.coala.uniovi.es/~jandro/noname/downloads/%{name}-%{version}-%{subver}.tar.gz
-# Source0-md5:	bf87b6018435f3bc5bfd1be598c1a28f
+Source0:	http://www.coala.uniovi.es/~jandro/noname/downloads/%{name}-%{version}.tar.gz
+# Source0-md5:	680d81f097962ed4a6773dbf09202159
+Patch0:		%{name}-conf_path.patch
 URL:		http://www.yafray.org/
 BuildRequires:	libjpeg-devel
 BuildRequires:	libstdc++-devel >= 5:3.3.2
@@ -24,23 +24,18 @@ YAFRAY is a free XML based 3d rendering engine.
 YAFRAY jest wolnodostêpnym silnikiem renderuj±cym 3d opartym o XML.
 
 %prep
-%setup -qn %{name}-%{version}-%{subver}
+%setup -q
+patch0 -p1 -b .wiget
 
 %build
-./configure \
-	--prefix=%{_prefix} \
-	--sysconfdir=%{_sysconfdir}
-	
-%{__make}
+scons prefix=%{_prefix} conf_path=%{_sysconfdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+scons install prefix=$RPM_BUILD_ROOT%{_prefix} conf_path=$RPM_BUILD_ROOT%{_sysconfdir}
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/yafray/*.la
-rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
+find $RPM_BUILD_ROOT -name .sconsign -exec rm {} \;
 
 %clean
 rm -rf $RPM_BUILD_ROOT
