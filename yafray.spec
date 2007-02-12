@@ -2,7 +2,7 @@
 # - use %{__cc}, %{__cxx}, %{rpmcflags} to build (need SConscript hacking)
 #
 Summary:	High quality photorealistic render system
-Summary(pl.UTF-8):   Wysokiej jakości fotorealistyczny system renderujący
+Summary(pl.UTF-8):	Wysokiej jakości fotorealistyczny system renderujący
 Name:		yafray
 Version:	0.0.7
 Release:	0.1
