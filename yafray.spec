@@ -2,7 +2,7 @@
 # - use %{__cc}, %{__cxx}, %{rpmcflags} to build (need SConscript hacking)
 #
 Summary:	High quality photorealistic render system
-Summary(pl):	Wysokiej jako¶ci fotorealistyczny system renderuj±cy
+Summary(pl.UTF-8):   Wysokiej jakoÅ›ci fotorealistyczny system renderujÄ…cy
 Name:		yafray
 Version:	0.0.7
 Release:	0.1
@@ -21,8 +21,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 YAFRAY is a free XML based 3d rendering engine.
 
-%description -l pl
-YAFRAY jest wolnodostêpnym silnikiem renderuj±cym 3d opartym o XML.
+%description -l pl.UTF-8
+YAFRAY jest wolnodostÄ™pnym silnikiem renderujÄ…cym 3d opartym o XML.
 
 %prep
 %setup -q
