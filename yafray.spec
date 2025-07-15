@@ -26,7 +26,7 @@ YAFRAY jest wolnodostępnym silnikiem renderującym 3d opartym o XML.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 scons prefix=%{_prefix} conf_path=%{_sysconfdir}
